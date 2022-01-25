@@ -23,51 +23,61 @@ public abstract class Pessoa implements Serializable {
 	@CPF
 	private String cpf;
 	private String telefone;
+	private String endereco;
 	
 	public Pessoa() {
 		super();
 	}
 
-	public Pessoa(Integer id, String nome, String cpf, String telefone) {
+	public Pessoa(Integer id, String nome, String cpf, String telefone, String endereco) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;
+		this.endereco = endereco;
 	}
 
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
+	
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
+	
 	public String getCpf() {
 		return cpf;
 	}
-
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
+	
 	public String getTelefone() {
 		return telefone;
 	}
-
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	
+	public String getEndereco() {
+		return endereco;
+	}
+	public void getEndereco(String endereco) {
+		this.endereco = endereco;
+	}
 
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(cpf, id);

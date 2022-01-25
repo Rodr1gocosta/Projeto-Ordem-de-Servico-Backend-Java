@@ -40,7 +40,7 @@ public class TecnicoService {
 			throw new DataIntegratyViolationException("CPF já cadastrado na base de dados!");
 		}
 		
-		Tecnico newObj = new Tecnico(null, objDto.getNome(), objDto.getCpf(), objDto.getTelefone());
+		Tecnico newObj = new Tecnico(null, objDto.getNome(), objDto.getCpf(), objDto.getTelefone(), objDto.getEndereco());
 		return repository.save(newObj);
 	}
 	
@@ -54,6 +54,7 @@ public class TecnicoService {
 			oldObj.setNome(objDto.getNome());
 			oldObj.setCpf(objDto.getCpf());
 			oldObj.setTelefone(objDto.getTelefone());
+			oldObj.setEndereco(objDto.getEndereco());
 			return repository.save(oldObj);
 		}
 	}

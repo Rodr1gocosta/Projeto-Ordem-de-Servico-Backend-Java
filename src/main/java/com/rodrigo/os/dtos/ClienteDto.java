@@ -24,6 +24,9 @@ public class ClienteDto implements Serializable {
 	@NotEmpty(message = "O campo Telefone é requerido!")
 	private String telefone;
 	
+	@NotEmpty(message = "O campo endereço é requerido!")
+	private String endereco;
+	
 	public ClienteDto() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -34,6 +37,7 @@ public class ClienteDto implements Serializable {
 		this.nome = obj.getNome();
 		this.cpf = obj.getCpf();
 		this.telefone = obj.getTelefone();
+		this.endereco = obj.getEndereco();
 	}
 	public Integer getId() {
 		return id;
@@ -58,6 +62,13 @@ public class ClienteDto implements Serializable {
 	}
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+	
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 	
 	

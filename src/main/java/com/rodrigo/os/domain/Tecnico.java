@@ -22,8 +22,8 @@ public class Tecnico extends Pessoa implements Serializable {
 		super();
 	}
 
-	public Tecnico(Integer id, String nome, String cpf, String telefone) {
-		super(id, nome, cpf, telefone);
+	public Tecnico(Integer id, String nome, String cpf, String telefone, String endereco) {
+		super(id, nome, cpf, telefone, endereco);
 	}
 
 	public List<OS> getList() {
@@ -32,6 +32,11 @@ public class Tecnico extends Pessoa implements Serializable {
 
 	public void setList(List<OS> list) {
 		this.list = list;
+	}
+
+	public void setEndereco(String endereco) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
