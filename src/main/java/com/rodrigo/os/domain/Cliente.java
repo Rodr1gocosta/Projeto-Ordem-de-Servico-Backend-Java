@@ -34,9 +34,4 @@ public class Cliente extends Pessoa implements Serializable {
 		this.list = list;
 	}
 
-	public void setEndereco(String endereco) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }
