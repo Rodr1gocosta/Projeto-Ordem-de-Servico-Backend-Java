@@ -2,13 +2,10 @@ pipeline {
     agent any
     stages {
         stage('Step1') {
-            echo 'teste 1'
-        }
-        stage('Step2') {
-            echo 'teste 2'
-        }
-        stage('Step3') {
-            echo 'teste 3'
+            steps {
+                echo 'Executando a etapa 1'
+                // Adicione outros passos aqui, se necessário
+            }
         }
     }
 }
