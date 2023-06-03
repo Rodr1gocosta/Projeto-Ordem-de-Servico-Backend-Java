@@ -1,10 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Step1') {
+        stage('Build') {
             steps {
-                echo 'Executando a etapa 1'
-                // Adicione outros passos aqui, se necessário
+                echo 'Clonar o repositório Git'
+                // Clonar o repositório Git
+                git 'https://github.com/Rodr1gocosta/Projeto-Ordem-de-Servico-Backend-Java.git'
             }
         }
     }
