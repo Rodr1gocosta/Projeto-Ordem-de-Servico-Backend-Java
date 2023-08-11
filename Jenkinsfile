@@ -1,16 +1,45 @@
 pipeline {
     agent any
+
+    environment {
+        DOCKER_IMAGE_NAME = "rodr1gocosta/ordem-servico"
+    }
+
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Clonar o repositório Git'
-                git 'https://github.com/Rodr1gocosta/Projeto-Ordem-de-Servico-Backend-Java.git'
+                sh 'mvn clean package'
             }
         }
         stage('Test') {
             steps {
-                 echo 'Iniciando Teste'
-             }
+                sh 'mvn test'
+            }
+        }
+        stage('Criar imagem Docker') {
+            steps {
+                script {
+                    docker.build(DOCKER_IMAGE_NAME, '.')
+                }
+            }
+        }
+        stage('Enviar imagem para Docker Hub') {
+            steps {
+                script {
+                    dockerImage.push()
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline completed!'
         }
     }
 }
