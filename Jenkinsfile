@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = "rodr1gocosta/ordem-servico"
+        DOCKER_IMAGE_NAME = "rodr1gocosta/ordem-servico:tagname"
     }
 
     stages {
