@@ -26,9 +26,9 @@ pipeline {
         stage('Enviar imagem Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', '30e1a593-c8d9-4b87-8061-1bac3fd438bc') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                         dockerapp.push('latest')
-                        dockerapp.push('${env.BUILD_ID}')
+                        dockerapp.push("${env.BUILD_ID}")
                     }
                     
                 }
