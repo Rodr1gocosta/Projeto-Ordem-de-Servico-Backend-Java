@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', '30e1a593-c8d9-4b87-8061-1bac3fd438bc') {
-                        sh 'docker push rodr1gocosta/ordem-servico:v1'
+                        sh 'docker push docker push rodr1gocosta/ordem-servico:tagname'
                     }
                     
                 }
