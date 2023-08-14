@@ -1,10 +1,5 @@
 pipeline {
     agent any
-
-    environment {
-        DOCKER_IMAGE_NAME = "rodr1gocosta/ordem-servico:tagname"
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -32,7 +27,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', '30e1a593-c8d9-4b87-8061-1bac3fd438bc') {
-                        sh 'docker push docker push rodr1gocosta/ordem-servico:tagname'
+                        sh 'docker push docker rodr1gocosta/ordem-servico:tagname'
                     }
                     
                 }
