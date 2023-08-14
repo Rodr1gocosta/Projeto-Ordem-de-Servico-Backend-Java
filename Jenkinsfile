@@ -19,7 +19,7 @@ pipeline {
         stage('Criar imagem Docker') {
             steps {
                 script {
-                    sh 'docker build -t rodr1gocosta/ordem-servico:tagname .'
+                    dockerapp = docker.build("rodr1gocosta/ordem-servico:${env.BUILD_ID}", '-f ./Dockerfile')
                 }
             }
         }
@@ -27,7 +27,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', '30e1a593-c8d9-4b87-8061-1bac3fd438bc') {
-                        sh 'docker push docker rodr1gocosta/ordem-servico:tagname'
+                        dockerapp.push('latest')
+                        dockerapp.push('${env.BUILD_ID}')
                     }
                     
                 }
