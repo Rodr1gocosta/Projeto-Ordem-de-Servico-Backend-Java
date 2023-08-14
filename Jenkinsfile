@@ -28,6 +28,13 @@ pipeline {
                 }
             }
         }
+        stage('Enviar imagem Docker Hub') {
+            steps {
+                script {
+                    sh 'docker push -t rodr1gocosta/ordem-servico:v1'
+                }
+            }
+        }
     }
     post {
         always {
