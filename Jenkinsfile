@@ -31,7 +31,7 @@ pipeline {
         stage('Enviar imagem Docker Hub') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'ae9e89c5-08ce-4615-8fe8-4a9481dc50c6', url: 'https://hub.docker.com/u/rodr1gocosta') {
+                    withDockerRegistry(credentialsId: 'dckr_pat_gGDzWerlSjU7QggnqPUVrcPxE40', url: 'https://hub.docker.com/u/rodr1gocosta') {
                         sh 'docker push rodr1gocosta/ordem-servico:v1'
                     }
                     
