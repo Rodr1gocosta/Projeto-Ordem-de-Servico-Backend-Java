@@ -24,19 +24,11 @@ pipeline {
         stage('Criar imagem Docker') {
             steps {
                 script {
-                    docker.build(DOCKER_IMAGE_NAME, '.')
-                }
-            }
-        }
-        stage('Enviar imagem para Docker Hub') {
-            steps {
-                script {
-                    dockerImage.push()
+                    sh 'docker build -t rodr1gocosta/ordem-servico:v1 .'
                 }
             }
         }
     }
-
     post {
         always {
             echo 'Pipeline completed!'
