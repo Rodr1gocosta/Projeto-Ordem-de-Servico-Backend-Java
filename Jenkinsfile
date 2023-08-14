@@ -19,7 +19,7 @@ pipeline {
         stage('Criar imagem Docker') {
             steps {
                 script {
-                    dockerapp = docker.build("rodr1gocosta/ordem-servico:${env.BUILD_ID} .", '-f ./Dockerfile')
+                    dockerapp = sh 'docker build -t rodr1gocosta/ordem-servico:v1 .'
                 }
             }
         }
