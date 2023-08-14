@@ -19,7 +19,7 @@ pipeline {
         stage('Criar imagem Docker') {
             steps {
                 script {
-                    sh 'docker build -t rodr1gocosta/ordem-servico:v1 .'
+                    sh 'docker build -t rodr1gocosta/ordem-servico:tagname .'
                 }
             }
         }
